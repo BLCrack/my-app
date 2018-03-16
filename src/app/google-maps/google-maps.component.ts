@@ -12,4 +12,6 @@ export class GoogleMapsComponent implements OnInit {
   ngOnInit() {
   }
 
+  lat: number = 52.2158186;
+  lng: number = 20.9987672;
 }
