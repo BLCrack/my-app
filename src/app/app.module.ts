@@ -8,6 +8,7 @@ import { DevicesComponent } from './devices/devices.component';
 import { HomeComponent } from './home/home.component';
 import { AgmCoreModule} from '@agm/core';
 import { AppRoutingModule } from './/app-routing.module';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AdminPanelComponent,
     GoogleMapsComponent,
     DevicesComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
