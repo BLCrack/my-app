@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceService} from '../device.service';
 
 @Component({
   selector: 'app-google-maps',
@@ -7,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoogleMapsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  devices: any;
 
   lat: number = 52.2158186;
   lng: number = 20.9987672;
+
+  constructor(private deviceService: DeviceService) { }
+
+  ngOnInit() {
+    this.deviceService.getDevicesForUser().
+    subscribe(data => {
+      this.devices = data;
+    });
+  }
+
+
 }

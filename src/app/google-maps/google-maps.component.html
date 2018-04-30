@@ -1,3 +1,7 @@
 <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <!--<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>-->
+  <agm-marker *ngFor="let device of devices"
+              [latitude]="device.actualLocation.gps_latitude"
+              [longitude]="device.actualLocation.gps_longitude">
+  </agm-marker>
 </agm-map>

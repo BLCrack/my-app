@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { AgmCoreModule} from '@agm/core';
 import { AppRoutingModule } from './/app-routing.module';
 import { RegisterComponent } from './register/register.component';
+import { DeviceService } from './device.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,9 +28,10 @@ import { RegisterComponent } from './register/register.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCGTkG4IxFFW23iTTyNvJaED3OGLi5RqXo'
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
