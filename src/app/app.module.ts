@@ -11,6 +11,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { DeviceService } from './device.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user.service';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -29,9 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
       apiKey: 'AIzaSyCGTkG4IxFFW23iTTyNvJaED3OGLi5RqXo'
     }),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [DeviceService],
+  providers: [DeviceService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
