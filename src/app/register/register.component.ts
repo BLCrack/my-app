@@ -15,4 +15,14 @@ export class RegisterComponent implements OnInit {
 
   }
 
+  register(emailText: string, passwordText: string) {
+
+    const newUser: User = ({
+      id: '',
+      email: emailText,
+      password: passwordText
+    })
+
+    console.log(JSON.stringify(newUser));
+  }
 }
