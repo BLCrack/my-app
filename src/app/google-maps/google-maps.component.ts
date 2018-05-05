@@ -16,7 +16,7 @@ export class GoogleMapsComponent implements OnInit {
   constructor(private deviceService: DeviceService) { }
 
   ngOnInit() {
-    this.deviceService.getDevicesForUser().
+    this.deviceService.getDevices().
     subscribe(data => {
       this.devices = data;
     });
