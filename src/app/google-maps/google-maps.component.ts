@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceService} from '../device.service';
+import {Device} from '../interfaces/Device';
 
 @Component({
   selector: 'app-google-maps',
@@ -20,7 +21,6 @@ export class GoogleMapsComponent implements OnInit {
     subscribe(data => {
       this.devices = data;
     });
+
   }
-
-
 }
