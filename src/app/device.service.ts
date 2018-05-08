@@ -14,11 +14,7 @@ export class DeviceService {
 
   devicesURL = 'http://localhost:8080/devices/all';
 
-  public getDevices() : Observable<Array<Device>> {
+  public getDevices(): Observable<Array<Device>> {
     return this.http.get<Array<Device>>(this.devicesURL);
-  }
-
-  public getDevicesForUser() {
-
   }
 }

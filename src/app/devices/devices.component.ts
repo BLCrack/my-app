@@ -9,7 +9,7 @@ import { DeviceService } from '../device.service';
 })
 export class DevicesComponent implements OnInit {
 
-  devices : Device[];
+  devices: Device[];
 
   constructor(private deviceService: DeviceService) {
   }
