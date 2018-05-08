@@ -17,10 +17,11 @@ export class GoogleMapsComponent implements OnInit {
   constructor(private deviceService: DeviceService) { }
 
   ngOnInit() {
-    this.deviceService.getDevices().
-    subscribe(data => {
-      this.devices = data;
-    });
+    this.getDevices();
+  }
 
+  getDevices()  {
+    this.deviceService.getDevices()
+      .subscribe(devices => this.devices = devices);
   }
 }

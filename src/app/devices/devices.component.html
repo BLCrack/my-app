@@ -1,6 +1,22 @@
-<p>
-  devices:
-
-  <li *ngFor="let device of devices">Device : {{device.id}}, {{device.connectionName}}, {{device.deviceName}}</li>
-</p>
+<br>
+<h2>Moje aktualnie podłączone urządzenia</h2>
+<br>
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID urządzenia</th>
+    <th>Nazwa połączenia</th>
+    <th>Model urządzenia</th>
+    <th>Data dołączenia</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let device of devices">
+  <tr>
+    <td>{{device.id}}</td>
+    <td>{{device.connectionName}}</td>
+    <td>{{device.deviceName}}</td>
+    <td>{{device.startConnection}}</td>
+  </tr>
+  </tbody>
+</table>
 

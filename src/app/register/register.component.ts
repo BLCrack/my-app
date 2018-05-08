@@ -9,20 +9,27 @@ import {User} from '../interfaces/User';
 })
 export class RegisterComponent implements OnInit {
 
+  users: User[];
+
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-
+    this.getUsers();
   }
 
   register(emailText: string, passwordText: string) {
 
     const newUser: User = ({
       id: '',
-      email: emailText,
+      login: emailText,
       password: passwordText
-    })
+    });
 
     console.log(JSON.stringify(newUser));
+  }
+
+  getUsers() {
+    this.userService.getUsers()
+      .subscribe(users => this.users = users);
   }
 }
