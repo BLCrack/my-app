@@ -17,13 +17,13 @@ export class UserService {
     return this.http.get<Array<User>>('http://localhost:8080/users/all');
   }
 
-  /*public addUser(newUser: User): Observable<User> {
-    return this.http.post('http://localhost:8080/users/newuser', newUser).map(this.extractData);
+  public addUser(newUser: User): Observable<{}> {
+    return this.http.post('http://localhost:8080/users/newuser', newUser);
   }
 
   public extractData(res: Response) {
     const body = res.json();
     return body || {};
-  }*/
+  }
 
 }
