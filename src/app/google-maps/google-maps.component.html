@@ -1,7 +1,10 @@
-<agm-map [latitude]="lat" [longitude]="lng">
+<agm-map [latitude]="devices[0].actualLocation.gpsLatitude" [longitude]="devices[0].actualLocation.gpsLongitude" [zoom]="12">
   <!--<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>-->
   <agm-marker *ngFor="let device of devices"
-              [latitude]="device.actualLocation.gps_latitude"
-              [longitude]="device.actualLocation.gps_longitude">
+              [openInfoWindow]="true"
+              [title]="device.connectionName"
+              [latitude]="device.actualLocation.gpsLatitude"
+              [longitude]="device.actualLocation.gpsLongitude">
+    <agm-info-window>{{device.connectionName}}</agm-info-window>
   </agm-marker>
 </agm-map>

@@ -8,6 +8,8 @@
     <th>Nazwa połączenia</th>
     <th>Model urządzenia</th>
     <th>Data dołączenia</th>
+    <th>Aktualna szerokość geograficzna</th>
+    <th>Aktualna długość geograficzna</th>
   </tr>
   </thead>
   <tbody *ngFor="let device of devices">
@@ -16,6 +18,8 @@
     <td>{{device.connectionName}}</td>
     <td>{{device.deviceName}}</td>
     <td>{{device.startConnection}}</td>
+    <td>{{device.actualLocation.gpsLatitude}}</td>
+    <td>{{device.actualLocation.gpsLongitude}}</td>
   </tr>
   </tbody>
 </table>
