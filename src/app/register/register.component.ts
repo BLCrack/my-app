@@ -26,7 +26,8 @@ export class RegisterComponent implements OnInit {
       password: passwordText
     });
 
-    this.userService.addUser(newUser);
+    this.userService.addUser(newUser)
+      .subscribe();
 
     console.log(JSON.stringify(newUser));
   }
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
   getUsers() {
     this.userService.getUsers()
       .subscribe(users => this.users = users);
+      
   }
 }
 
