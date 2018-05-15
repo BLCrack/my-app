@@ -26,16 +26,20 @@ export class RegisterComponent implements OnInit {
       password: passwordText
     });
 
-    this.userService.addUser(newUser)
-      .subscribe();
-
+    for (let usr of this.users) {
+      if (usr.login === newUser.login) {
+        window.alert('Taki login już istnieje');
+      } else {
+        this.userService.addUser(newUser)
+          .subscribe();
+      }
+    }
     console.log(JSON.stringify(newUser));
   }
 
   getUsers() {
     this.userService.getUsers()
       .subscribe(users => this.users = users);
-      
   }
 }
 
