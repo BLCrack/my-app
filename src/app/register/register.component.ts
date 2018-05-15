@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
 
   addUser(emailText: string, passwordText: string) {
 
+    let isRegister = false;
     const newUser: User = ({
       id: null,
       login: emailText,
@@ -28,13 +29,16 @@ export class RegisterComponent implements OnInit {
 
     for (let usr of this.users) {
       if (usr.login === newUser.login) {
-        window.alert('Taki login już istnieje');
-      } else {
-        this.userService.addUser(newUser)
-          .subscribe();
+        isRegister = true;
       }
     }
-    console.log(JSON.stringify(newUser));
+
+    if(isRegister) {
+      window.alert('Taki użytkownik już istnieje!');
+    } else {
+      this.userService.addUser(newUser)
+        .subscribe();
+    }
   }
 
   getUsers() {
