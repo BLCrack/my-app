@@ -9,7 +9,7 @@ import {Device} from '../interfaces/Device';
 })
 export class GoogleMapsComponent implements OnInit {
 
-  devices: Device[];
+  devices: any;
 
   lat: number = 52.2158186;
   lng: number = 20.9987672;
@@ -20,7 +20,7 @@ export class GoogleMapsComponent implements OnInit {
     this.getDevices();
   }
 
-  getDevices() {
+  getDevices()  {
     this.deviceService.getDevices()
       .subscribe(devices => this.devices = devices);
   }
