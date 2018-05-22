@@ -20,25 +20,16 @@ export class RegisterComponent implements OnInit {
 
   addUser(emailText: string, passwordText: string) {
 
-    let isRegister = false;
-    const newUser: User = ({
+     let newUser: User = ({
       id: null,
       login: emailText,
       password: passwordText
     });
 
-    for (let usr of this.users) {
-      if (usr.login === newUser.login) {
-        isRegister = true;
-      }
-    }
+    this.userService.addUser(newUser)
+      .subscribe();
 
-    if(isRegister) {
-      window.alert('Taki użytkownik już istnieje!');
-    } else {
-      this.userService.addUser(newUser)
-        .subscribe();
-    }
+    console.log(JSON.stringify(newUser));
   }
 
   getUsers() {

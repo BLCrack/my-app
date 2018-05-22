@@ -13,7 +13,14 @@ import { DeviceService } from './device.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 import {FormsModule} from '@angular/forms';
+import { LoginService } from './login.service';
+import { AuthService } from './auth.service';
+import { AuthGuardService } from './auth-guard.service';
+import { JwtModule } from '@auth0/angular-jwt';
 
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -30,11 +37,18 @@ import {FormsModule} from '@angular/forms';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCGTkG4IxFFW23iTTyNvJaED3OGLi5RqXo'
     }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:8080'],
+        blacklistedRoutes: ['localhost:8080/login']
+      }
+    }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [DeviceService, UserService],
+  providers: [DeviceService, UserService, LoginService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
