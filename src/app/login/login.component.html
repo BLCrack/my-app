@@ -1,14 +1,9 @@
 <form class="form-signin">
   <h1 class="h3 mb-3 font-weight-normal">Logowanie</h1>
   <label for="inputEmail" class="sr-only">Email address</label>
-  <input #textBoxEmail type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <input #textBoxEmail type="email" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>
   <input #textBoxPassword type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox mb-3">
-    <label>
-          <input type="checkbox" value="remember-me"> Zapamiętaj
-        </label>
-  </div>
    <button class="btn btn-lg btn-success btn-block" type="submit" (click)="signIn(textBoxEmail.value, textBoxPassword.value)" >Zaloguj</button>
   <p>
   </p>

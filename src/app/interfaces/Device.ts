@@ -4,9 +4,9 @@ import {Location} from './Location';
 export interface Device {
 
   id: number;
+  phoneNumber: string;
   connectionName: string;
   deviceName: string;
-  historyDays: number;
   startConnection: Date;
   actualLocation: Location ;
   owner: User;

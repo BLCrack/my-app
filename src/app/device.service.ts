@@ -13,6 +13,6 @@ export class DeviceService {
   constructor(private http: HttpClient) { }
 
   public getDevices(): Observable<Array<Device>> {
-    return this.http.get<Array<Device>>('http://localhost:8080/devices/all');
+    return this.http.get<Array<Device>>('http://localhost:8080/devices/forcurrentuser');
   }
 }

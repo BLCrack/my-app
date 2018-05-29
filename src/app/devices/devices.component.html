@@ -5,6 +5,7 @@
   <thead>
   <tr>
     <th>ID urządzenia</th>
+    <th>Numer telefonu</th>
     <th>Nazwa połączenia</th>
     <th>Model urządzenia</th>
     <th>Data dołączenia</th>
@@ -15,6 +16,7 @@
   <tbody *ngFor="let device of devices">
   <tr>
     <td>{{device.id}}</td>
+    <td>{{device.phoneNumber}}</td>
     <td>{{device.connectionName}}</td>
     <td>{{device.deviceName}}</td>
     <td>{{device.startConnection}}</td>

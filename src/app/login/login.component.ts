@@ -8,18 +8,18 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
+
   constructor(private loginService: LoginService, private router: Router) { }
 
-  ngOnInit() {    
+  ngOnInit() {
   }
 
-  public signIn(emailText: string, passwordText: string) {    
+  public signIn(emailText: string, passwordText: string) {
     localStorage.clear();
     this.loginService.login(emailText, passwordText)
-                     .subscribe(tokenInfo => { 
-                       localStorage.setItem("token", tokenInfo.token);
-                       this.router.navigate(["/admin"]);
+                     .subscribe(tokenInfo => {
+                       localStorage.setItem('token', tokenInfo.token);
+                       this.router.navigate(['/admin']);
                       },
                                error => window.alert('Nieprawidłowy login lub hasło!'))
   }
