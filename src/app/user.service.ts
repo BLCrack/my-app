@@ -15,14 +15,14 @@ export class UserService {
 
   public getUsers(): Observable<Array<User>> {
     console.log("getUsers");
-    return this.http.get<Array<User>>('http://localhost:8080/users/all');
+    return this.http.get<Array<User>>('http://77.55.218.238:8080/users/all');
   }
 
   public addUser(newUser: User): Observable<{}> {
     console.log("addUser: " + newUser);
-    this.http.get<Array<User>>('http://localhost:8080/users/all')
+    this.http.get<Array<User>>('http://77.55.218.238:8080/users/all')
       .subscribe(users => console.log(users));
-    return this.http.post('http://localhost:8080/users/newuser', newUser, httpOptions)
+    return this.http.post('http://77.55.218.238:8080/users/newuser', newUser, httpOptions)
                     .pipe(
                       catchError(this.handleError<User>('addUser'))
                     );

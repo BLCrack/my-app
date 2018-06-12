@@ -13,6 +13,6 @@ export class LoginService {
   constructor(private http: HttpClient){}
 
   public login(username: string, password: string) {
-    return this.http.post<TokenInfo>('http://localhost:8080/login', {username, password}, httpOptions);      
+    return this.http.post<TokenInfo>('http://77.55.218.238:8080/login', {username, password}, httpOptions);
   }
 }
