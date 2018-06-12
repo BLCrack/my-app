@@ -15,13 +15,13 @@ const routes: Routes = [
     component: AdminPanelComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'map', component: GoogleMapsComponent },
+      { path: 'maps', component: GoogleMapsComponent },
       { path: 'home', component: HomeComponent },
       { path: 'devices', component: DevicesComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
   },
-  { path: 'register', component: RegisterComponent },
+  { path: 'registers', component: RegisterComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 

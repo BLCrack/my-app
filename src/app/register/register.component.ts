@@ -3,9 +3,9 @@ import {UserService} from '../user.service';
 import {User} from '../interfaces/User';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-register-c',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
 
